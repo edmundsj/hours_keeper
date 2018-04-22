@@ -1,3 +1,4 @@
+# This extends the standard library datetime objects with "floor" and "ceiling" functions
 import datetime
 
 
@@ -11,6 +12,9 @@ def time_floor(date, t="hour"):
 
 
 def time_ceiling(date, t="hour"):
+	""" Calculates the date rounded up to the nearest hour or day
+
+	"""
 	if t == "hour":
 		return date.replace(microsecond=0, second=0, minute=0) + datetime.timedelta(hours=1)
 	elif t == "day":
